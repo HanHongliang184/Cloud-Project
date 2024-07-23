@@ -407,7 +407,7 @@ void Book::selectDestDir()
         sprintf(pdu->caData, "%d %d %s", srcLen, destLen, m_strMoveFileName.toStdString().c_str());
 
         memcpy(pdu->caMsg, m_strMoveFilePath.toStdString().c_str(), srcLen);
-        memcpy((char*)(pdu->caMsg)+(srcLen+1), strDestDir.toStdString().c_str(), destLen);
+        memcpy((char*)(pdu->caMsg)+(srcLen+1), m_strDestDir.toStdString().c_str(), destLen);
 
         TcpClient::getInstance().getTcpSocket().write((char*)pdu, pdu->uiPDULen);
         free(pdu);
