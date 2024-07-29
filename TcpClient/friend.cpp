@@ -67,6 +67,7 @@ void Friend::updateFriendList(PDU *pdu)
     if (NULL == pdu) {
         return;
     }
+    m_pFrienfListWidget->clear();
     uint uiSize = pdu->uiMsgLen/32;
     char caName[32] = {'\0'};
     for (uint i = 0 ; i < uiSize ; i ++) {
